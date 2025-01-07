@@ -8,7 +8,7 @@ CREATE TABLE "category" (
     -- Example: 'cat1'
     "category_id" VARCHAR(10)   NOT NULL,
     -- Example: 'food'
-    "category_name" VARCHAR(100)   NOT NULL
+    "category" VARCHAR(100)   NOT NULL
 );
 
 -- Table: subcategory
@@ -16,15 +16,17 @@ CREATE TABLE "subcategory" (
     -- Example: 'subcat1'
     "subcategory_id" VARCHAR(10)   NOT NULL,
     -- Example: 'food trucks'
-    "subcategory_name" VARCHAR(100)   NOT NULL
+    "subcategory" VARCHAR(100)   NOT NULL
 );
 
 -- Table: contacts
 CREATE TABLE "contacts" (
     -- Example: 4661
     "contact_id" INT   NOT NULL,
-    -- Example: 'Cecilia Velasco'
-    "name" VARCHAR(100)   NOT NULL,
+    -- Example: 'Cecilia'
+    "first_name" VARCHAR(100)   NOT NULL,
+    -- Example: 'Velasco'
+    "last_name" VARCHAR(100)   NOT NULL,
     -- Example: 'cecilia.velasco@rodrigues.fr'
     "email" VARCHAR(150)   NOT NULL
 );
@@ -55,10 +57,6 @@ CREATE TABLE "campaign" (
     "launch_date" TIMESTAMP   NOT NULL,
     -- Example: '2021-03-01 06:00:00'
     "end_date" TIMESTAMP   NOT NULL,
-    -- Example: FALSE
-    "staff_pick" BOOLEAN   NOT NULL,
-    -- Example: FALSE
-    "spotlight" BOOLEAN   NOT NULL,
     -- FK to category.category_id
     "category_ids" VARCHAR(10)   NOT NULL,
     -- FK to subcategory.subcategory_id
